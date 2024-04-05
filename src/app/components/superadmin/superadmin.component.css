@@ -1,0 +1,11 @@
+.mat-toolbar.custom-toolbar {
+    margin-top: 20px;
+    background-color: #ffffff;
+    justify-content: space-between;
+  }
+
+.h2.toolbar-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}

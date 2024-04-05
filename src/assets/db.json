@@ -1,0 +1,87 @@
+{
+  "users": [
+    {
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "id": "1621"
+    },
+    {
+      "name": "Tushar Chaudhari",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "superadmin",
+      "profileImage": "string",
+      "id": "69d8"
+    }
+  ],
+  "companies": [
+    {
+      "id": "56",
+      "name": "TCS",
+      "address": "Thane",
+      "contactNo": "999999999",
+      "sector": "IT"
+    },
+    {
+      "id": "9892",
+      "name": "Wipro",
+      "address": "Pune",
+      "contactNo": "67563992748",
+      "sector": "IT"
+    },
+    {
+      "id": "6899",
+      "name": "KRWT",
+      "address": "Pune",
+      "contactNo": "8756342287",
+      "sector": "IT"
+    },
+    {
+      "id": "5767",
+      "name": "HCL",
+      "address": "Munbai",
+      "contactNo": "8878675377",
+      "sector": "IT"
+    },
+    {
+      "id": "3455",
+      "name": "Cogni",
+      "address": "dubai",
+      "contactNo": "2435546322",
+      "sector": "IT"
+    },
+    {
+      "id": "47924",
+      "name": "SBI",
+      "address": "Mumbai",
+      "contactNo": "6666666666",
+      "sector": "Banking"
+    },
+    {
+      "id": "4345",
+      "name": "PWC",
+      "address": "Noida",
+      "contactNo": "8876654567",
+      "sector": "IT"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "firstName": "Tushar",
+      "lastName": "Chaudhari",
+      "email": "chaudharitush313@gmail.com",
+      "contactNo": "0976 704 2849",
+      "companyId": "56",
+      "companyName": {
+        "id": "56",
+        "name": "TCS",
+        "address": "Pune",
+        "contactNo": "999999999",
+        "sector": "IT"
+      }
+    }
+  ]
+}

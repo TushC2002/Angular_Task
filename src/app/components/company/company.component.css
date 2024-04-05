@@ -1,0 +1,32 @@
+.mat-toolbar.custom-toolbar {
+  margin-top: 20px;
+  background-color: #ffffff;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.search-field {
+  margin-left: auto; 
+  border: none;
+  width: 300px;
+  height: auto;
+
+}
+
+
+.search-field input {
+  border-radius: 20px; 
+  border: 1px solid #ccc; 
+  padding: 8px 16px;  
+  font-size: 14px;
+}
+
+
+.add-button {
+  margin-left: 10px; 
+}

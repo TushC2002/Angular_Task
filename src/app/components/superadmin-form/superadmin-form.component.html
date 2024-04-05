@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Contact No." [(ngModel)]="contactNo" name="contactNo" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Company</mat-label>
+    <mat-select [(ngModel)]="selectedCompany" name="selectedCompany" required>
+      <mat-option *ngFor="let company of companies" [value]="company.id">
+        {{ company.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>

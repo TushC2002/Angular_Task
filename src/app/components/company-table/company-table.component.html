@@ -1,0 +1,50 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon>business</mat-icon> Company Name
+        </th>
+        <td mat-cell *matCellDef="let company"> {{company.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon>location_on</mat-icon> Address
+        </th>
+        <td mat-cell *matCellDef="let company"> {{company.address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contactNo">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon>phone</mat-icon> Contact No
+        </th>
+        <td mat-cell *matCellDef="let company"> {{company.contactNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sector">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon>domain</mat-icon> Sector
+        </th>
+        <td mat-cell *matCellDef="let company"> {{company.sector}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let company">
+          <button mat-icon-button color="primary" (click)="openUpdateDialog(company)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="openDeleteDialog(company.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+    </ng-container>
+
+    <!-- Define table rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+
+  

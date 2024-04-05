@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Company ID</mat-label>
+        <input matInput [(ngModel)]="company.id" name="id" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Company Name</mat-label>
+        <input matInput [(ngModel)]="company.name" name="name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Company Address</mat-label>
+        <input matInput [(ngModel)]="company.address" name="address" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Contact No</mat-label>
+        <input matInput [(ngModel)]="company.contactNo" name="contactNo" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Sector</mat-label>
+        <input matInput [(ngModel)]="company.sector" name="sector" required>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" color="primary">Submit</button>
+</form>

@@ -1,0 +1,56 @@
+
+.sidenav-container {
+  height: 100vh;
+}
+
+
+.side-nav {
+  width: 200px;
+}
+.mat-sidenav-content {
+  padding: 16px; 
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.logo {
+  width: 80px; 
+}
+
+
+.nav-list {
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.active-link {
+  background-color:aqua;
+}
+
+
+.mat-toolbar {
+  width: 100%;
+}
+
+
+.fill-space {
+  flex: 1;
+}
+
+
+.mat-toolbar .mat-icon-button {
+  margin-left: 16px;
+}
+
+
+.mat-toolbar .mat-icon-button.mat-button {
+  margin-left: auto;
+  margin-right: 16px;
+}

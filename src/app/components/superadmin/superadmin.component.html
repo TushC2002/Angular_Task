@@ -1,0 +1,10 @@
+<div>
+    <mat-toolbar color="White" class="custom-toolbar">
+        <h2 class="toolbar-title">Admin List</h2>
+        <button mat-raised-button color="accent" (click)="openAddAdminForm()">Add Admin</button>
+    </mat-toolbar>
+    <ng-template #addCompanyForm>
+        <app-company-form></app-company-form>
+    </ng-template>
+    <app-superadmin-table></app-superadmin-table>
+</div>

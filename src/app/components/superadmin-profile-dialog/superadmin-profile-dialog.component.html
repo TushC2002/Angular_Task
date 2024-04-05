@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Profile</h2>
+<div mat-dialog-content style="display: flex; justify-content: center; align-items: center; height: 100%;">
+  <mat-card style="width:400px; height:300px; border-radius: 10px; box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0);">
+    <mat-card-content style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+      <img src="../../../assets/profile.png" alt="Profile Image" style="width: 200px; height: 200px; margin-bottom: 20px;">
+      <p style="font-weight: bold; margin-bottom: 10px; color: black;">Name: {{ currentUser?.name }}</p>
+      <p style="margin-bottom: 20px; font-weight: bold; color: black;">Role: {{ currentUser?.role }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div mat-dialog-actions class="dialog-actions" style="display: flex; justify-content: space-between; padding: 20px;">
+    <div style="width: 45%;">
+      <button mat-raised-button color="warn" (click)="logout()" style="width: 100%; font-size: 16px;">Logout</button>
+    </div>
+    <div style="width: 45%;">
+      <button mat-raised-button (click)="close()" style="width: 100%; font-size: 16px;">Close</button>
+    </div>
+</div>
+  

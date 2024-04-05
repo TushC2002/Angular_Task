@@ -1,0 +1,32 @@
+/* CSS for the form */
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f9f9f9; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+  
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  
+  form .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  button {
+    width: 45%; 
+    font-size: 16px;
+  }
+  

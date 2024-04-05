@@ -1,0 +1,43 @@
+
+form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f9f9f9; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-label {
+    color: #333;
+  }
+  
+
+  input.mat-input {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  
+  button[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
