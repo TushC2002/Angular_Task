@@ -1,38 +1,14 @@
 /* company-table.component.css */
 table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
-  }
-  
-  
-  .mat-paginator {
-    margin-top: 20px; 
-  }
-  
-  
-  .mat-elevation-z8 {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  td.mat-cell {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  th.mat-header-cell {
-    font-weight: bold;
-    font-size: 16px;
-    color: #444;
-    text-align: center;
-    display: flex;
-    align-items: center; 
-  }
-  
-  mat-icon {
-    margin-right: 5px;
-    padding-top: 3px;
-  }
-  
+}
+
+.table-row {
+  transition: transform 0.3s;
+}
+
+.table-row:hover {
+  transform: scale(1.1);
+}
+

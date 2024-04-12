@@ -1,26 +1,30 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" opened class="side-nav">
     <div class="logo-container">
-      <img src="../../../assets/logo.png" alt="Logo" class="logo">
+      <img src="../../../assets/logo.png" alt="Logo" class="logo" />
     </div>
     <mat-nav-list class="nav-list">
-      <mat-list-item [routerLink]="['/superadmin-dashboard/superadmin']" routerLinkActive="active-link">
-        <mat-icon>person</mat-icon>
-        <span>Superadmin</span>
-      </mat-list-item>
-      <mat-list-item [routerLink]="['/superadmin-dashboard/company']" routerLinkActive="active-link">
-        <mat-icon>business</mat-icon>
-        <span>Company</span>
-      </mat-list-item>
+      <button mat-list-item [routerLink]="['/superadmin-dashboard/superadmin']" routerLinkActive="active-link" class="btn">
+        <div class="d-flex align-items-center text-light">
+          <mat-icon class="me-1">person</mat-icon>
+          <div>Admin</div>
+        </div>
+      </button>
+      <button mat-list-item [routerLink]="['/superadmin-dashboard/company']" routerLinkActive="active-link" class="btn">
+        <div class="d-flex align-items-center text-light">
+          <mat-icon class="me-1">business</mat-icon>
+          <div>Company</div>
+        </div>
+      </button>
     </mat-nav-list>
-  </mat-sidenav>  
+  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>Superadmin Dashboard</span>
-      <span class="fill-space"></span>       
+      <span class="fill-space"></span>
       <button mat-icon-button (click)="openProfileDialog()">
         <mat-icon>account_circle</mat-icon>
       </button>

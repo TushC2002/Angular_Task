@@ -1,9 +1,8 @@
-<div class="confirmation-dialog">
-  <h2>Confirm Delete</h2>
-  <p>Are you sure you want to delete this company? </p>
-  <mat-icon>delete</mat-icon>
-  <div class="button-container">
-    <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
-    <button mat-raised-button (click)="onCancel()">Cancel</button>
+<div class="confirmation-dialog container">
+  <h2 class="text-center">Confirm Delete</h2>
+  <p class="text-center">Are you sure you want to delete this company?</p>
+  <div class="button-container d-flex justify-content-around">
+    <button mat-raised-button color="primary" (click)="onConfirm()" class="btn btn-danger">Confirm</button>
+    <button mat-raised-button color="warn" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
   </div>
 </div>

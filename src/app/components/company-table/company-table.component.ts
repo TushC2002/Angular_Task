@@ -13,7 +13,8 @@ import { CompanyUpdateComponent } from '../company-update/company-update.compone
 })
 export class CompanyTableComponent implements OnInit {
   @Input() dataSource = new MatTableDataSource<Company>();
-  displayedColumns: string[] = ['name', 'address', 'contactNo', 'sector', 'actions'];
+  displayedColumns: string[] = ['srNo', 'name', 'address', 'contactNo', 'sector', 'actions'];
+  serialNumber: number = 1;
 
   constructor(private companyService: CompanyService, public dialog: MatDialog) {}
 
@@ -23,7 +24,10 @@ export class CompanyTableComponent implements OnInit {
 
   loadCompanies(): void {
     this.companyService.getCompanies().subscribe(companies => {
-      this.dataSource.data = companies;
+      const companiesWithSerials = companies.map((company, index) => {
+        return { ...company, srNo: index + 1 };
+      });
+      this.dataSource.data = companiesWithSerials;
     });
   }
 
@@ -44,7 +48,6 @@ export class CompanyTableComponent implements OnInit {
     const dialogRef = this.dialog.open(CompanyDeleteComponent, {
       width: '500px',
       height:'400px',
-
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -61,5 +64,17 @@ export class CompanyTableComponent implements OnInit {
     }, error => {
       console.error('Error deleting company:', error);
     });
+  }
+
+  zoomIn(event: MouseEvent): void {
+    const row = event.currentTarget as HTMLTableRowElement;
+    row.style.transform = 'scale(1.1)';
+    row.style.transformOrigin = 'left';
+  }
+  
+  zoomOut(event: MouseEvent): void {
+    const row = event.currentTarget as HTMLTableRowElement;
+    row.style.transform = 'scale(1)';
+    row.style.transformOrigin = 'left';
   }
 }

@@ -1,50 +1,64 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="mat-elevation-z0">
+  <table class="table table-hover" mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="srNo">
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light">
+        <div>Sr. No</div>
+      </th>
+      <td mat-cell *matCellDef="let company">{{ company.srNo }}</td>
+    </ng-container>
     
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>
-            <mat-icon>business</mat-icon> Company Name
-        </th>
-        <td mat-cell *matCellDef="let company"> {{company.name}} </td>
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light">
+        <div>Company Name</div>
+      </th>
+      <td mat-cell *matCellDef="let company">{{ company.name }}</td>
     </ng-container>
 
     <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef>
-            <mat-icon>location_on</mat-icon> Address
-        </th>
-        <td mat-cell *matCellDef="let company"> {{company.address}} </td>
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light">
+        <div>Address</div>
+      </th>
+      <td mat-cell *matCellDef="let company">{{ company.address }}</td>
     </ng-container>
 
     <ng-container matColumnDef="contactNo">
-        <th mat-header-cell *matHeaderCellDef>
-            <mat-icon>phone</mat-icon> Contact No
-        </th>
-        <td mat-cell *matCellDef="let company"> {{company.contactNo}} </td>
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light">
+        <div>Contact No</div>
+      </th>
+      <td mat-cell *matCellDef="let company">{{ company.contactNo }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="sector">
-        <th mat-header-cell *matHeaderCellDef>
-            <mat-icon>domain</mat-icon> Sector
-        </th>
-        <td mat-cell *matCellDef="let company"> {{company.sector}} </td>
+    <ng-container matColumnDef="sector" >
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light">
+        <div>Sector</div>
+      </th>
+      <td mat-cell *matCellDef="let company">{{ company.sector }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Actions</th>
-        <td mat-cell *matCellDef="let company">
-          <button mat-icon-button color="primary" (click)="openUpdateDialog(company)">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-icon-button color="warn" (click)="openDeleteDialog(company.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </td>
+    <ng-container matColumnDef="actions" >
+      <th mat-header-cell *matHeaderCellDef class="bg-secondary text-light" >
+        <div>Actions</div>
+      </th>
+      <td mat-cell *matCellDef="let company">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="openUpdateDialog(company)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="openDeleteDialog(company.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
     </ng-container>
 
-    <!-- Define table rows -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
-
-  
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" class="table-row" (mouseover)="zoomIn($event)" (mouseleave)="zoomOut($event)"></tr>
+  </table>
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+</div>

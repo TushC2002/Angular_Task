@@ -1,16 +1,28 @@
-
 <div>
-    <mat-toolbar color="White" class="custom-toolbar">
-        <span class="header">Company List</span>
-        <span class="fill-space"></span> 
-        <mat-form-field appearance="fill" class="search-field">
-            <input matInput placeholder="Search" [(ngModel)]="searchQuery" (keyup)="applyFilter()">
-        </mat-form-field>
-        <button mat-raised-button color="accent" (click)="openAddCompanyForm()" class="add-button">Add Company</button>
-    </mat-toolbar>
-    <ng-template #addCompanyForm>
-        <app-company-form></app-company-form>
-    </ng-template>
-    <router-outlet></router-outlet>
+  <mat-toolbar color="White" class="custom-toolbar d-flex justify-content-between align-items-center">
+    <span class="header">Company List</span>
+
+    <div class="d-flex align-items-center">
+      <input
+        matInput
+        placeholder="Search"
+        [(ngModel)]="searchQuery"
+        (keyup)="applyFilter()"
+        class="search-field me-1"
+      />
+
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openAddCompanyForm()"
+        class="add-button text-light"
+      >
+        Add Company
+      </button>
+    </div>
+  </mat-toolbar>
+  <ng-template #addCompanyForm>
+    <app-company-form></app-company-form>
+  </ng-template>
+  <router-outlet></router-outlet>
 </div>
-  

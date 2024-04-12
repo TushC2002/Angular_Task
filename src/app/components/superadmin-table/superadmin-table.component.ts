@@ -14,7 +14,7 @@ import { DeleteConfirmationDialogComponent } from '../delete-confirmation-dialog
 export class SuperadminTableComponent implements OnInit {
 
   admins: Admin[] = [];
-  displayedColumns: string[] = ['fullName', 'contactNo', 'companyName', 'actions'];
+  displayedColumns: string[] = ['srNo','fullName', 'contactNo', 'companyName', 'actions'];
 
   constructor(
     private adminService: AdminService,
@@ -28,10 +28,16 @@ export class SuperadminTableComponent implements OnInit {
 
   loadAdmins(): void {
     this.adminService.getAdmins().subscribe(admins => {
-      this.admins = admins;
+      // Generate serial numbers for each admin
+      const adminsWithSerials = admins.map((admin, index) => {
+        return { ...admin, srNo: index + 1 };
+      });
+      // Assign the modified array with serial numbers to the admins property
+      this.admins = adminsWithSerials;
       this.fetchCompanyNames();
     });
   }
+  
 
   fetchCompanyNames(): void {
     this.admins.forEach(admin => {
@@ -79,5 +85,17 @@ export class SuperadminTableComponent implements OnInit {
     }, error => {
       console.error('Error deleting admin:', error);
     });
+  }
+
+  zoomIn(event: MouseEvent): void {
+    const row = event.currentTarget as HTMLTableRowElement;
+    row.style.transform = 'scale(1.1)';
+    row.style.transformOrigin = 'left';
+  }
+  
+  zoomOut(event: MouseEvent): void {
+    const row = event.currentTarget as HTMLTableRowElement;
+    row.style.transform = 'scale(1)';
+    row.style.transformOrigin = 'left';
   }
 }
