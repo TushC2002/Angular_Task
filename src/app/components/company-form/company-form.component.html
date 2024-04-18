@@ -1,4 +1,10 @@
-<form (ngSubmit)="onSubmit()">
+<div class="d-flex justify-content-between align-items-center">
+    <h2 mat-dialog-title class="mb-0">Add Company</h2>
+    <button mat-icon-button (click)="onCancel()" class="close-icon ps-2 pe-2 pb-2">
+      <mat-icon class="fs-4">close</mat-icon>
+    </button>
+</div>
+<form #companyForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
         <mat-label>Company ID</mat-label>
         <input matInput [(ngModel)]="company.id" name="id" required>
@@ -24,5 +30,6 @@
         <input matInput [(ngModel)]="company.sector" name="sector" required>
     </mat-form-field>
 
-    <button mat-raised-button type="submit" color="primary">Submit</button>
+    <button mat-raised-button type="submit" color="primary" (click)="companyForm.ngSubmit.emit()">Submit</button>
 </form>
+  

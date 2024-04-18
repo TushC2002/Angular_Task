@@ -67,8 +67,7 @@ export class SuperadminTableComponent implements OnInit {
 
   openDeleteConfirmationDialog(adminId: string): void {
     const dialogRef = this.dialog.open(DeleteConfirmationDialogComponent, {
-      width: '500px',
-      height: '400px',
+      width: '400px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -89,7 +88,7 @@ export class SuperadminTableComponent implements OnInit {
 
   zoomIn(event: MouseEvent): void {
     const row = event.currentTarget as HTMLTableRowElement;
-    row.style.transform = 'scale(1.1)';
+    row.style.transform = 'scale(1)';
     row.style.transformOrigin = 'left';
   }
   

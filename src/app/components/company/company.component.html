@@ -14,6 +14,14 @@
       <button
         mat-raised-button
         color="primary"
+        (click)="openDownloadDialog()"
+        class="add-button text-light"
+      >
+        Fetch and Download Data
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
         (click)="openAddCompanyForm()"
         class="add-button text-light"
       >
@@ -24,5 +32,8 @@
   <ng-template #addCompanyForm>
     <app-company-form></app-company-form>
   </ng-template>
-  <router-outlet></router-outlet>
+  <ng-template #downloadDialog>
+    <app-download-dialog></app-download-dialog>
+  </ng-template>
+  <app-company-table [dataSource]="dataSource"></app-company-table>
 </div>

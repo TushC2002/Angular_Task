@@ -14,12 +14,15 @@ import { CompanyUpdateComponent } from '../company-update/company-update.compone
 export class CompanyTableComponent implements OnInit {
   @Input() dataSource = new MatTableDataSource<Company>();
   displayedColumns: string[] = ['srNo', 'name', 'address', 'contactNo', 'sector', 'actions'];
+  filteredDataSource = new MatTableDataSource<Company>();
+  searchQuery: string = '';
   serialNumber: number = 1;
 
   constructor(private companyService: CompanyService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadCompanies();
+    this.onPageChange({ pageIndex: 0, pageSize: 5 });
   }
 
   loadCompanies(): void {
@@ -28,7 +31,15 @@ export class CompanyTableComponent implements OnInit {
         return { ...company, srNo: index + 1 };
       });
       this.dataSource.data = companiesWithSerials;
+      this.applyFilter();
     });
+  }
+
+  applyFilter(): void {
+    const filterValue = this.searchQuery.trim().toLowerCase();
+    this.filteredDataSource.data = this.dataSource.data.filter(company =>
+      company.name.toLowerCase().includes(filterValue)
+    );
   }
 
   openUpdateDialog(company: Company): void {
@@ -46,8 +57,8 @@ export class CompanyTableComponent implements OnInit {
 
   openDeleteDialog(companyId: string): void {
     const dialogRef = this.dialog.open(CompanyDeleteComponent, {
-      width: '500px',
-      height:'400px',
+      width: '400px',
+      // height:'400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -66,9 +77,16 @@ export class CompanyTableComponent implements OnInit {
     });
   }
 
+  onPageChange(event: any): void {
+    const startIndex = event.pageIndex * event.pageSize;
+    const endIndex = startIndex + event.pageSize;
+    this.filteredDataSource.data = this.dataSource.data.slice(startIndex, endIndex);
+  }
+  
+
   zoomIn(event: MouseEvent): void {
     const row = event.currentTarget as HTMLTableRowElement;
-    row.style.transform = 'scale(1.1)';
+    row.style.transform = 'scale(1)';
     row.style.transformOrigin = 'left';
   }
   

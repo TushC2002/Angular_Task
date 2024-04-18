@@ -41,6 +41,7 @@ import { SuperadminUpdateComponent } from './components/superadmin-update/supera
 import { DeleteConfirmationDialogComponent } from './components/delete-confirmation-dialog/delete-confirmation-dialog.component';
 import { CompanyUpdateComponent } from './components/company-update/company-update.component';
 import { CompanyDeleteComponent } from './components/company-delete/company-delete.component';
+import { DownloadDialogComponent } from './components/download-dialog/download-dialog.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { CompanyDeleteComponent } from './components/company-delete/company-dele
     DeleteConfirmationDialogComponent,
     CompanyUpdateComponent,
     CompanyDeleteComponent,
+    DownloadDialogComponent,
   ],
   imports: [
     BrowserModule,

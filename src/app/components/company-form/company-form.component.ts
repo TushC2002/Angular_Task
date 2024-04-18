@@ -31,8 +31,11 @@ export class CompanyFormComponent implements OnInit {
     onSubmit(): void {
         this.companyService.addCompany(this.company).subscribe(() => {
             this.dialogRef.close(); 
-            this.data.companyComponent.loadCompanies();
-            
+            this.data.companyComponent.loadCompanies();   
         });
+    }
+
+    onCancel(): void {
+        this.dialogRef.close();
     }
 }

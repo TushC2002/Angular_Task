@@ -15,7 +15,6 @@ export class SuperadminDashboardComponent {
   openProfileDialog(): void {
     this.dialog.open(SuperadminProfileDialogComponent, {
       width: '500px',
-      height: '500px',
       data: { role: 'superadmin', profileImage: 'path/to/profile/image' }
     });
   }
