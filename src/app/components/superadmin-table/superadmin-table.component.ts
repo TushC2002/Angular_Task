@@ -28,11 +28,9 @@ export class SuperadminTableComponent implements OnInit {
 
   loadAdmins(): void {
     this.adminService.getAdmins().subscribe(admins => {
-      // Generate serial numbers for each admin
       const adminsWithSerials = admins.map((admin, index) => {
         return { ...admin, srNo: index + 1 };
       });
-      // Assign the modified array with serial numbers to the admins property
       this.admins = adminsWithSerials;
       this.fetchCompanyNames();
     });
