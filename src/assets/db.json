@@ -66,6 +66,27 @@
       "address": "Noida",
       "contactNo": "8876654567",
       "sector": "IT"
+    },
+    {
+      "id": "7688",
+      "name": "HDFC",
+      "address": "Noida",
+      "contactNo": "9767042849",
+      "sector": "Banking"
+    },
+    {
+      "id": "7977",
+      "name": "ITC",
+      "address": "Kolkata",
+      "contactNo": "8909075645",
+      "sector": "Hotels"
+    },
+    {
+      "id": "8787",
+      "name": "Infosys",
+      "address": "Pune",
+      "contactNo": "6743892365",
+      "sector": "IT"
     }
   ],
   "admins": [
@@ -83,6 +104,22 @@
         "contactNo": "999999999",
         "sector": "IT"
       }
+    },
+    {
+      "id": "0",
+      "firstName": "Rahul",
+      "lastName": "Patil",
+      "email": "Rahul@gmail.com",
+      "contactNo": "9767042850",
+      "companyId": "47924",
+      "companyName": {
+        "id": "47924",
+        "name": "SBI",
+        "address": "Mumbai",
+        "contactNo": "6666666666",
+        "sector": "Banking"
+      },
+      "srNo": 2
     }
   ]
 }

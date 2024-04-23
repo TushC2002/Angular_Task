@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { Company } from '../../models/company.model';
 import { CompanyService } from '../../services/company.service';
 import { CompanyDeleteComponent } from '../company-delete/company-delete.component';
@@ -13,6 +14,7 @@ import { CompanyUpdateComponent } from '../company-update/company-update.compone
 })
 export class CompanyTableComponent implements OnInit {
   @Input() dataSource = new MatTableDataSource<Company>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator; 
   displayedColumns: string[] = ['srNo', 'name', 'address', 'contactNo', 'sector', 'actions'];
   filteredDataSource = new MatTableDataSource<Company>();
   searchQuery: string = '';
@@ -22,7 +24,6 @@ export class CompanyTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCompanies();
-    this.onPageChange({ pageIndex: 0, pageSize: 5 });
   }
 
   loadCompanies(): void {
@@ -32,6 +33,7 @@ export class CompanyTableComponent implements OnInit {
       });
       this.dataSource.data = companiesWithSerials;
       this.applyFilter();
+      this.dataSource.paginator = this.paginator; 
     });
   }
 
@@ -57,8 +59,7 @@ export class CompanyTableComponent implements OnInit {
 
   openDeleteDialog(companyId: string): void {
     const dialogRef = this.dialog.open(CompanyDeleteComponent, {
-      width: '400px',
-      // height:'400px',
+      width: '400px',             
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -76,13 +77,6 @@ export class CompanyTableComponent implements OnInit {
       console.error('Error deleting company:', error);
     });
   }
-
-  onPageChange(event: any): void {
-    const startIndex = event.pageIndex * event.pageSize;
-    const endIndex = startIndex + event.pageSize;
-    this.filteredDataSource.data = this.dataSource.data.slice(startIndex, endIndex);
-  }
-  
 
   zoomIn(event: MouseEvent): void {
     const row = event.currentTarget as HTMLTableRowElement;
